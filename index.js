@@ -25,7 +25,7 @@ app.use(express.json());
 app.use("/api/v1/books", require("./routes/book"));
 app.use("/api/v1/gen-token", require("./routes/genToken"));
 
-const port = 5000;
-app.listen(port, (req, res) => {
+const port = process.env.PORT;
+app.listen(+port, (req, res) => {
   console.log(`Server running at port ${port}`);
 });
